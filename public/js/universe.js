@@ -222,7 +222,7 @@ export class GalaxyRenderer {
 
     for (const p of this.planets) {
       const orbit = p.orbit_radius || 120;
-      const speed = p.orbit_speed || 0.00012;
+      const speed = p.orbit_speed || 0.00025;
       const angle = timestamp * speed + p._phase;
       const worldX = Math.cos(angle) * orbit;
       const worldY = Math.sin(angle) * orbit;

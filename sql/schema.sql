@@ -30,7 +30,7 @@ create table if not exists planets (
   description text,
   created_by uuid references auth.users on delete set null,
   orbit_radius int default 120,
-  orbit_speed float default 0.00012,
+  orbit_speed float default 0.00025,
   created_at timestamptz default now()
 );
 
