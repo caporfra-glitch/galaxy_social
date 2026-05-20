@@ -1,0 +1,286 @@
+:root {
+  --bg: #070b17;
+  --panel: #101a33;
+  --panel2: #142240;
+  --text: #eaf0ff;
+  --muted: #9aa8d4;
+  --accent: #4aa3ff;
+  --danger: #ff4d78;
+  --ok: #43d48f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  background: radial-gradient(circle at top, #121f3d 0%, var(--bg) 58%);
+  color: var(--text);
+}
+
+.auth-body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.auth-container,
+.card,
+.modal-content {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.auth-container {
+  width: min(460px, 95vw);
+  padding: 24px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+button,
+.btn-link {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+button.secondary,
+.btn-link.secondary {
+  background: #283b6f;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+.auth-tabs button.active {
+  background: #45b2ff;
+}
+
+.auth-form {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #0d1631;
+  color: var(--text);
+  padding: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.status-text {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 8px 0 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: rgba(9, 15, 30, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.search-wrap {
+  flex: 1;
+  max-width: 450px;
+  position: relative;
+}
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #081126;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.suggestion-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.suggestion-item:hover {
+  background: rgba(74, 163, 255, 0.2);
+}
+
+.canvas-shell {
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+#universe-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(95, 157, 255, 0.1), transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(255, 102, 170, 0.08), transparent 35%),
+    #040a16;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 10;
+}
+
+.modal {
+  border: none;
+  width: min(780px, 95vw);
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  padding: 18px;
+}
+
+.planet-modal-content {
+  position: relative;
+}
+
+.planet-modal-content video {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 420px;
+  background: #000;
+}
+
+.close-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1f2f57;
+}
+
+.planet-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.moon-form {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.moons-list {
+  max-height: 250px;
+  overflow: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 10px;
+}
+
+.moon-item {
+  background: #0c1530;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.card {
+  padding: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat-box {
+  background: var(--panel2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.stat-box strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+  .canvas-shell {
+    height: calc(100vh - 120px);
+  }
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galaxy Social - Universo</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">🌌 Galaxy Social</div>
+      <div class="search-wrap">
+        <input id="star-search" type="text" placeholder="Cerca stella (topic)..." />
+        <div id="search-suggestions" class="suggestions"></div>
+      </div>
+      <div class="topbar-actions">
+        <button id="create-star-btn" class="secondary">Nuova Stella</button>
+        <button id="back-to-universe" class="secondary hidden">Torna all'Universo</button>
+        <a href="/profile" class="secondary btn-link">Profilo</a>
+        <button id="logout-btn" class="danger">Logout</button>
+      </div>
+    </header>
+
+    <section class="canvas-shell">
+      <canvas id="universe-canvas"></canvas>
+    </section>
+
+    <button id="create-planet-btn" class="floating-btn hidden">🪐 Crea Nuovo Pianeta</button>
+
+    <dialog id="upload-dialog" class="modal">
+      <form id="upload-form" class="modal-content">
+        <h3>Crea Nuovo Pianeta</h3>
+        <label>Titolo</label>
+        <input name="title" type="text" required />
+        <label>Descrizione</label>
+        <textarea name="description" rows="3"></textarea>
+        <label>Video (max 100MB: mp4/mov/avi)</label>
+        <input name="video" type="file" accept="video/*" required />
+        <div class="row">
+          <button type="button" id="cancel-upload" class="secondary">Annulla</button>
+          <button type="submit">Upload</button>
+        </div>
+        <p id="upload-status" class="status-text"></p>
+      </form>
+    </dialog>
+
+    <dialog id="planet-modal" class="modal">
+      <div class="modal-content planet-modal-content">
+        <button id="close-planet-modal" class="close-x">✕</button>
+        <video id="planet-video" controls preload="metadata"></video>
+        <h3 id="planet-title"></h3>
+        <p id="planet-description"></p>
+        <div class="planet-actions">
+          <button id="like-btn">❤️ Like</button>
+          <span id="like-count">0 like</span>
+          <span id="moon-count">0 lune</span>
+        </div>
+        <form id="moon-form" class="moon-form">
+          <input name="content" type="text" maxlength="250" placeholder="Aggiungi una luna/commento..." required />
+          <button type="submit">Invia</button>
+        </form>
+        <div id="moons-list" class="moons-list"></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

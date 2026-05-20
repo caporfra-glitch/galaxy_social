@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galaxy Social - Profilo</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">👤 Profilo Utente</div>
+      <div class="topbar-actions">
+        <a class="secondary btn-link" href="/app">Torna all'app</a>
+      </div>
+    </header>
+
+    <main class="profile-layout">
+      <section class="card">
+        <h2>Le tue statistiche</h2>
+        <div id="profile-stats" class="stats-grid"></div>
+      </section>
+
+      <section class="card">
+        <h2>Modifica profilo</h2>
+        <form id="profile-form">
+          <label>Username</label>
+          <input type="text" name="username" required />
+          <label>Avatar URL</label>
+          <input type="url" name="avatar_url" placeholder="https://..." />
+          <label>Bio</label>
+          <textarea name="bio" rows="4" maxlength="280"></textarea>
+          <button type="submit">Salva</button>
+          <p id="profile-status" class="status-text"></p>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="/js/profile.js"></script>
+  </body>
+</html>

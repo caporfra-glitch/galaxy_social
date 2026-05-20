@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galaxy Social - Login</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-container">
+      <h1>🌌 Galaxy Social</h1>
+      <p>Accedi al tuo universo di stelle, pianeti e lune.</p>
+
+      <div class="auth-tabs">
+        <button id="tab-login" class="active">Login</button>
+        <button id="tab-register">Registrazione</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Password</label>
+        <input type="password" name="password" required minlength="6" />
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="register-form" class="auth-form hidden">
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Username</label>
+        <input type="text" name="username" required minlength="3" />
+        <label>Password</label>
+        <input type="password" name="password" required minlength="6" />
+        <button type="submit">Crea account</button>
+      </form>
+
+      <div class="auth-actions">
+        <button id="google-login" class="secondary">Login con Google</button>
+        <button id="magic-link" class="secondary">Invia Magic Link</button>
+      </div>
+      <p id="auth-message" class="status-text"></p>
+    </main>
+
+    <script type="module" src="/js/auth.js"></script>
+  </body>
+</html>
